@@ -67,6 +67,8 @@ contract SimpleMintContract is ERC721, Ownable {
         // _safeMint comes from the ERC721, it makes sure that the token is distributed correctly
         _safeMint(msg.sender, tokenId);
       //  emit MintMessage(message);
+       //Generer URI som skal bruges i URI JSON til Metadata
+      _setTokenURI(tokenId, uri);
     }
 
     function safeTransfer external payable {
