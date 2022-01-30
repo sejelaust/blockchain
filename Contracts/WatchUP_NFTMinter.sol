@@ -46,14 +46,14 @@ contract WatchNFTBuySell is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
         string memory creator
                     ) external payable {
         
-        //Requirement that serial number and creater is NOT empty
+        //Requirement that serial number and creator is NOT empty
         require(bytes(serialNumber).length != 0,
                 "Please enter Serial Number");
 
-            require(bytes(creator).length != 0,
+        require(bytes(creator).length != 0,
                 "Please enter Serial Number");               
 
-        // Creating tokenID from msg.sender and serialNumber
+        // Creating tokenID by encoding msg.sender and serialNumber
         uint256 tokenId = toUint256(abi.encodePacked(msg.sender, serialNumber));
         
         // mint function with reciever and tokenId as input
