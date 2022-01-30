@@ -61,7 +61,9 @@ contract WatchNFTBuySell is ERC721, ERC721Enumerable,ERC721URIStorage, ERC721Bur
 
         // Increasing the token ID with 1 each time a token is minted
         _tokenIdCounter.increment();
-
+        
+        //tokenId = msg.sender + memory serialNumber
+        
         // mint function with reciever and tokenId as input
         _safeMint(reciever, tokenId);
 
